@@ -1,7 +1,7 @@
 package opslab.util;
 
 
-import org.yaml.snakeyaml.Yaml;
+import yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.io.FileInputStream;

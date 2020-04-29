@@ -1,6 +1,6 @@
 package opslab.util;
 
-import com.opslab.Opslab;
+import opslab.Opslab;
 
 import java.io.UnsupportedEncodingException;
 

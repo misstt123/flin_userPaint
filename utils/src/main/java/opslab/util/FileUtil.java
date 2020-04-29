@@ -1,7 +1,7 @@
 package opslab.util;
 
-import com.opslab.util.algorithmImpl.FileTypeImpl;
-import com.opslab.util.algorithmImpl.FileImpl;
+import opslab.util.algorithmImpl.FileTypeImpl;
+import opslab.util.algorithmImpl.FileImpl;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 封装了些文件相关的操作
  */
-public final class FileUtil {
+public final class xFileUtil {
     /**
      * Buffer的大小
      */

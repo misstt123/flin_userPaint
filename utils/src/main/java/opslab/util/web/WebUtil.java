@@ -1,7 +1,7 @@
 package opslab.util.web;
 
-import com.opslab.util.ConvertUtil;
-import com.opslab.util.StringUtil;
+import opslab.util.ConvertUtil;
+import opslab.util.StringUtil;
 
 import java.io.UnsupportedEncodingException;
 

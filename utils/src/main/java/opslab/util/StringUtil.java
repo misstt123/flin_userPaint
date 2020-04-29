@@ -1,7 +1,7 @@
 package opslab.util;
 
-import com.opslab.util.algorithmImpl.BCConvert;
-import com.opslab.util.algorithmImpl.StringImpl;
+import opslab.util.algorithmImpl.BCConvert;
+import opslab.util.algorithmImpl.StringImpl;
 
 import java.text.DecimalFormat;
 import java.util.*;

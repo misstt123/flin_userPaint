@@ -1,9 +1,9 @@
 package opslab.util.web;
 
-import com.opslab.Opslab;
-import com.opslab.util.CharUtil;
-import com.opslab.util.CharsetUtil;
-import com.opslab.util.StringUtil;
+import opslab.Opslab;
+import opslab.util.CharUtil;
+import opslab.util.CharsetUtil;
+import opslab.util.StringUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.ByteArrayOutputStream;

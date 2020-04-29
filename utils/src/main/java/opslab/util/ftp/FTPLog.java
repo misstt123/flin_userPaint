@@ -1,6 +1,7 @@
 package opslab.util.ftp;
 
-import com.opslab.util.DateUtil;
+
+import opslab.util.DateUtil;
 
 /**
  * Created by Administrator on 2015-04-08.

@@ -1,7 +1,8 @@
 package opslab.util.image;
 
-import com.opslab.util.encrypt.Base64Ext;
-import com.opslab.util.image.GIF.GifEncoder;
+
+import opslab.util.encrypt.Base64Ext;
+import opslab.util.image.GIF.GifEncoder;
 import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
@@ -32,10 +33,12 @@ public final class CaptchaUtil {
      * @return Color 随机颜色
      */
     protected static Color color(int fc, int bc) {
-        if (fc > 255)
+        if (fc > 255) {
             fc = 255;
-        if (bc > 255)
+        }
+        if (bc > 255) {
             bc = 255;
+        }
         int r = fc + num(bc - fc);
         int g = fc + num(bc - fc);
         int b = fc + num(bc - fc);
@@ -44,6 +47,7 @@ public final class CaptchaUtil {
 
     /**
      * 生成PNG的验证图片
+     *
      * @param randomStr
      * @param width
      * @param height
@@ -89,7 +93,7 @@ public final class CaptchaUtil {
     public static boolean gifCaptcha(String randomStr, int width, int height, String file) {
         char[] rands = randomStr.toCharArray();
         int len = rands.length;
-        try (OutputStream out =   new FileOutputStream(file)) {
+        try (OutputStream out = new FileOutputStream(file)) {
             // gif编码类，这个利用了洋人写的编码类，所有类都在附件中
             GifEncoder gifEncoder = new GifEncoder();
             //生成字符
@@ -108,7 +112,7 @@ public final class CaptchaUtil {
                 frame.flush();
             }
             gifEncoder.finish();
-           return true;
+            return true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -119,6 +123,7 @@ public final class CaptchaUtil {
 
     /**
      * 生成PNG的验证图片
+     *
      * @param randomStr
      * @param width
      * @param height
@@ -126,7 +131,7 @@ public final class CaptchaUtil {
      */
     public static String pngCaptchaBase64(String randomStr, int width, int height) {
         char[] strs = randomStr.toCharArray();
-        try (ByteArrayOutputStream out =   new ByteArrayOutputStream()) {
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = (Graphics2D) bi.getGraphics();
             AlphaComposite ac3;
@@ -153,7 +158,7 @@ public final class CaptchaUtil {
                 g.drawString(strs[i] + "", (width - (len - i) * w) + size, h - 4);
             }
             ImageIO.write(bi, "png", out);
-            return "data:image/png;base64,"+new String(Base64Ext.encode(out.toByteArray(), Base64Ext.NO_WRAP));
+            return "data:image/png;base64," + new String(Base64Ext.encode(out.toByteArray(), Base64Ext.NO_WRAP));
         } catch (IOException e) {
             return null;
         }
@@ -162,7 +167,7 @@ public final class CaptchaUtil {
     public static String gifCaptchaBase64(String randomStr, int width, int height) {
         char[] rands = randomStr.toCharArray();
         int len = rands.length;
-        try (ByteArrayOutputStream out =   new ByteArrayOutputStream()) {
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             // gif编码类，这个利用了洋人写的编码类，所有类都在附件中
             GifEncoder gifEncoder = new GifEncoder();
             //生成字符
@@ -181,7 +186,7 @@ public final class CaptchaUtil {
                 frame.flush();
             }
             gifEncoder.finish();
-            return "data:image/gif;base64,"+new String(Base64Ext.encode(out.toByteArray(), Base64Ext.NO_WRAP));
+            return "data:image/gif;base64," + new String(Base64Ext.encode(out.toByteArray(), Base64Ext.NO_WRAP));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

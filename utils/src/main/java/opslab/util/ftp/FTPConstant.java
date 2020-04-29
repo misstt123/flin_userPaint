@@ -1,10 +1,9 @@
 package opslab.util.ftp;
 
-import com.opslab.Opslab;
+import opslab.Opslab;
 
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * FTP相关的一些配置
  */

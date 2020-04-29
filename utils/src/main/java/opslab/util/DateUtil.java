@@ -1,7 +1,7 @@
 package opslab.util;
 
 
-import com.opslab.Opslab;
+import opslab.Opslab;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -102,7 +102,7 @@ public final class ASEUtil {
             byte[] byte_content = Base64Ext.decode(content.getBytes(), Base64Ext.NO_WRAP);
             /*
              * 解密
-			 */
+             */
             byte[] byte_decode = cipher.doFinal(byte_content);
             return new String(byte_decode, Opslab.UTF_8);
         } catch (NoSuchAlgorithmException e) {
@@ -129,7 +129,7 @@ public final class ASEUtil {
      * @param Str
      * @return
      */
-    public static String encrypt(String secretKey, String Str) {
+    public static String encrypt(String secretKey, String Str) throws NoSuchPaddingException, BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, UnsupportedEncodingException, InvalidKeyException {
         return Decode.str2HexStr(AESEncode(secretKey, Str));
     }
 
@@ -140,7 +140,7 @@ public final class ASEUtil {
      * @param str
      * @return
      */
-    public static String decode(String secretKey, String str) {
+    public static String decode(String secretKey, String str) throws UnsupportedEncodingException {
         return AESDncode(secretKey, Decode.hexStr2Str(str));
     }
 }

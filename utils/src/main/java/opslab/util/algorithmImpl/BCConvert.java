@@ -1,6 +1,7 @@
 package opslab.util.algorithmImpl;
 
-import com.opslab.util.StringUtil;
+
+import opslab.util.StringUtil;
 
 /**
  * 提供对字符串的全角->半角，半角->全角转换

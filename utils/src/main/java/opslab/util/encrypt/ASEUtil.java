@@ -1,7 +1,7 @@
 package opslab.util.encrypt;
 
-import com.opslab.Opslab;
 
+import opslab.Opslab;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
@@ -24,7 +24,7 @@ public final class ASEUtil {
      * 	5.内容加密
      * 	6.返回字符串
      */
-    public static String AESEncode(String encodeRules, String content) {
+    public static String AESEncode(String encodeRules, String content) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException {
         try {
             // 1.构造密钥生成器，指定为AES算法,不区分大小写
             KeyGenerator keygen = KeyGenerator.getInstance("AES");
@@ -79,7 +79,7 @@ public final class ASEUtil {
      * 	2.将加密后的字符串反纺成byte[]数组
      * 	3.将加密内容解密
      */
-    public static String AESDncode(final String encodeRules, String content) {
+    public static String AESDncode(final String encodeRules, String content) throws UnsupportedEncodingException {
         try {
             // 1.构造密钥生成器，指定为AES算法,不区分大小写
             KeyGenerator keygen = KeyGenerator.getInstance("AES");

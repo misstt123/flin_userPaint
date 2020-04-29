@@ -1,7 +1,6 @@
 package opslab.util.encrypt;
 
-import com.opslab.Opslab;
-import com.opslab.util.CharsetUtil;
+import opslab.Opslab;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;

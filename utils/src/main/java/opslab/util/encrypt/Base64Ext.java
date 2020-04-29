@@ -247,6 +247,7 @@ public class Base64Ext {
          * @return an overestimate for the number of bytes {@code
          * len} bytes could decode to.
          */
+        @Override
         public int maxOutputSize(int len) {
             return len * 3 / 4 + 10;
         }

@@ -1,12 +1,14 @@
 package opslab.helper;
 
-import com.opslab.bean.ResultBean;
-import com.opslab.util.RandomUtil;
-import com.opslab.util.image.CaptchaUtil;
+import opslab.bean.ResultBean;
+import opslab.util.RandomUtil;
+import opslab.util.image.CaptchaUtil;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
+
+
 
 public final class ImageHelper {
     /**

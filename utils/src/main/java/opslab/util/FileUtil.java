@@ -1,7 +1,12 @@
 package opslab.util;
 
+/**
+ * @Description:
+ * @Author lyh-god
+ * @Date 2020/4/30
+ **/
+
 import opslab.util.algorithmImpl.FileTypeImpl;
-import opslab.util.algorithmImpl.FileImpl;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -18,7 +23,7 @@ import java.util.List;
 /**
  * 封装了些文件相关的操作
  */
-public final class xFileUtil {
+public final class FileUtil {
     /**
      * Buffer的大小
      */
@@ -55,8 +60,9 @@ public final class xFileUtil {
             return null;
         } finally {
             try {
-                if (fileInputStream != null)
+                if (fileInputStream != null) {
                     fileInputStream.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -302,7 +308,7 @@ public final class xFileUtil {
      *
      * @param file 需要处理的文件
      * @return 返回文件的mime类型
-	 */
+     */
     public final static String mimeType(String file) {
         FileNameMap fileNameMap = URLConnection.getFileNameMap();
         return fileNameMap.getContentTypeFor(file);
@@ -393,11 +399,11 @@ public final class xFileUtil {
      */
     public final static boolean createFiles(String filePath) {
         File file = new File(filePath);
-        if(file.isDirectory()){
+        if (file.isDirectory()) {
             if (!file.exists()) {
                 return file.mkdirs();
             }
-        }else{
+        } else {
             File dir = file.getParentFile();
             if (!dir.exists()) {
                 if (dir.mkdirs()) {

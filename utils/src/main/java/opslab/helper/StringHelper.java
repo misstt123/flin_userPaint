@@ -1,8 +1,8 @@
 package opslab.helper;
 
-import com.opslab.util.CheckUtil;
-import com.opslab.util.algorithmImpl.BCConvert;
 
+import opslab.util.CheckUtil;
+import opslab.util.algorithmImpl.BCConvert;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -34,8 +34,9 @@ public class StringHelper {
         String result = "";
         if (array != null) {
             for (String temp : array) {
-                if (temp != null && temp.trim().length() > 0)
+                if (temp != null && temp.trim().length() > 0) {
                     result += (temp + symbol);
+                }
             }
             if (result.length() > 1 && CheckUtil.valid(symbol)) {
                 result = result.substring(0, result.length() - symbol.length());
@@ -232,7 +233,7 @@ public class StringHelper {
                 StringBuilder sb = new StringBuilder(capacity);
                 int pos = 0;
 
-                for(int patLen = oldPattern.length(); index >= 0; index = inString.indexOf(oldPattern, pos)) {
+                for (int patLen = oldPattern.length(); index >= 0; index = inString.indexOf(oldPattern, pos)) {
                     sb.append(inString, pos, index);
                     sb.append(newPattern);
                     pos = index + patLen;
